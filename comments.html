@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Personal Website</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #002147;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 160px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            font-size: large;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #0078d7;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-media a {
+            margin: 0 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.5);
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Comments Section */
+        .comment-container {
+            max-width: 800px;
+            margin: 11px auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .comment-container h1 {
+            text-align: center;
+            color: #c7a4ff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: white;
+        }
+
+        input, textarea {
+            width: 96%;
+            padding: 10px;
+            margin-bottom: 9px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #7d5cff;
+            box-shadow: 0 0 5px rgba(125, 92, 255, 0.5);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 81px;
+        }
+
+        .submit-btn {
+            background: #7d5cff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .submit-btn:hover {
+            background: #5b3fcc;
+        }
+
+        .comments-display {
+            margin-top: 30px;
+            border-top: 1px solid #c7a4ff;
+            padding-top: 20px;
+        }
+
+        .comment-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #c7a4ff;
+            border-radius: 5px;
+        }
+
+        .comment-item h3 {
+            margin: 0;
+            color: #c7a4ff;
+        }
+
+        .comment-item p {
+            margin: 5px 0 0;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .social-media {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/lgg.png" alt="Website Logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="video.html">Video</a>
+            <a href="comments.html" class="active">Contact</a>
+        </nav>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <img src="image/fbb.png" alt="Facebook Icon">
+            </a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                <img src="image/yk.png" alt="YouTube Icon">
+            </a>
+            <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+                <img src="image/tik.png" alt="TikTok Icon">
+            </a>
+        </div>
+    </header>
+
+    <div class="comment-container">
+        <h1>Leave a Comment</h1>
+        <form id="commentForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="comment">Your Comment</label>
+            <textarea id="comment" placeholder="Write your comment here..." required></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div class="comments-display" id="commentsDisplay">
+            <h2>Recent Comments</h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Personal Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const commentForm = document.getElementById('commentForm');
+        const commentsDisplay = document.getElementById('commentsDisplay');
+
+        commentForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+
+            const commentItem = document.createElement('div');
+            commentItem.classList.add('comment-item');
+            commentItem.innerHTML = `
+                <h3>${name}</h3>
+                <p>${comment}</p>
+            `;
+
+            commentsDisplay.appendChild(commentItem);
+            commentForm.reset();
+        });
+    </script>
+</body>
+</html>

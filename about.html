@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+       header {
+            background-color: #002147;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+        
+        h1 {
+            color: #002147;
+            text-align: left;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 160px;
+            height: 75px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            font-size: large;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0078d7;
+        }
+        
+         .social-media {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .social-media a {
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.5);
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+        }
+
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+        }
+
+        .biodata {
+            flex: 1;
+        }
+
+        .biodata img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #002147;
+        }
+
+        .biodata-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .biodata-content ul li {
+            margin: 10px 0;
+        }
+
+        .biodata-content a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #002147;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .biodata-content a:hover {
+            background-color: #0056b3;
+        }
+
+        .timetable {
+            flex: 1;
+            border-left: 2px solid #ddd;
+            padding-left: 20px;
+        }
+
+        .timetable h2 {
+            color: #04357f;
+            margin-bottom: 10px;
+        }
+
+        .timetable table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .timetable table, .timetable th, .timetable td {
+            border: 1px solid #ddd;
+        }
+
+        .timetable th, .timetable td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .timetable th {
+            background-color: #002147;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/lgg.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="video.html">Video</a>
+            <a href="comments.html">Contact</a>
+        </nav>
+        
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">
+                <img src="image/fbb.png" alt="Facebook">
+            </a>
+            <a href="https://youtube.com" target="_blank">
+                <img src="image/yk.png" alt="YouTube">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="image/tik.png" alt="TikTok">
+            </a>
+        </div>
+        
+    </header>
+
+    <main>
+        <!-- Biodata Section -->
+        <div class="biodata">
+            <img src="image/is.JPG" alt="My Picture">
+            <div class="biodata-content">
+                <h1>My Biodata</h1>
+                <ul>
+                    <li><strong>Full Name:</strong> MOHD FAZLIL BIN MOHD BILL</li>
+                    <li><strong>Contact Information:</strong> PAISFADZLI@GMAIL.COM</li>
+                    <li><strong>Date of Birth:</strong> 24/03/2000</li>
+                    <li><strong>Educational Background:</strong> Universiti Malaysia Sabah Kampus Antarabangsa Labuan</li>
+                    <li><strong>Skills:</strong>
+                        <ul>
+                            <li>BLENDER</li>
+                            <li>PHOTOSHOP</li>
+                            <li>CAPCUT</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Timetable Section -->
+        <div class="timetable">
+            <h2>Weekly Timetable</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>9:00 AM - 11:00 AM</td>
+                        <td>Class: Web Development</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>2:00 PM - 4:00 PM</td>
+                        <td>Class: Graphic Design</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Workshop: Blender Basics</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>1:00 PM - 3:00 PM</td>
+                        <td>Practice: Photoshop</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>3:00 PM - 5:00 PM</td>
+                        <td>Project: Video Editing</td>
+                    </tr>
+                </tbody>
+            </table>
+          
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
